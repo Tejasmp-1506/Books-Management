@@ -1,0 +1,32 @@
+{
+  "name": "project3-books-management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tejasmp-1506/Project3-Books-Management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tejasmp-1506/Project3-Books-Management/issues"
+  },
+  "homepage": "https://github.com/Tejasmp-1506/Project3-Books-Management#readme",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "cars": "^1.1.6",
+    "console": "^0.7.2",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "module": "^1.2.5",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.8",
+    "nodemon": "^2.0.15",
+    "validator": "^13.7.0"
+  }
+}
