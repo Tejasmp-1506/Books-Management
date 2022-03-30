@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 
 const bookSchema = new mongoose.Schema({
@@ -16,9 +17,10 @@ const bookSchema = new mongoose.Schema({
        }, 
 
     userId: {
-        type : ObjectId,
-        required : true,
-        ref :  user
+        type: ObjectId,
+        ref: "user",
+        required: true,
+        trim: true
     },
 
     ISBN: {
@@ -28,12 +30,12 @@ const bookSchema = new mongoose.Schema({
     },
 
     category: {
-        type : string,
+        type : String,
         required : true
     },
 
     subcategory: {
-        type : string,
+        type : String,
         required : true
         },
 
@@ -51,7 +53,7 @@ const bookSchema = new mongoose.Schema({
     }, 
 
     isDeleted: {
-        type : boolean, 
+        type : Boolean, 
         default: false
     },
     releasedAt: {
@@ -65,5 +67,5 @@ const bookSchema = new mongoose.Schema({
 },  {timestamp : true});
 
 
-module.exports = mongoose.Model('book' , bookSchema)
+module.exports = mongoose.model('book' , bookSchema)
 //It probably means that we are making a model inside our mongoose Database which will be named books and would have schema like that of bookSchema you are creating
