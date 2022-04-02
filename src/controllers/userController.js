@@ -142,15 +142,11 @@ const userLogin = async function (req, res) {
             return res.status(401).send({status: false, msg: 'Invalid username or password'});
         }
 
-        const token = jwt.sign({
-            userId: user._id.toString(),
-            exp: Math.floor(Date.now()/1000) + 10 * 60 * 60
-        },
-            'my-secret',
-            );
-            res.setHeader("x-api-token", token)
+        let payload = { _id: user._id };
+        let token = jwt.sign(payload, 'my-secret', { expiresIn: "30m" })
+      
 
-        return res.status(200).send({status: true, message: 'User login successfull', data: {token}});
+        return res.status(200).send({status: true, message: 'User login successfull', data: token});
     } 
     catch (error) {
         return res.status(500).send({status: false, message: error.message});

@@ -25,8 +25,9 @@ router.delete('/books/:bookId',auth.authenticate,auth.authorise, bookController.
 
 router.post('/books/:bookId/review', reviewController1.createReview)
 
+router.put('/books/:bookId/review/:reviewId', reviewController1.updateReview)
 
-
+router.delete('/books/:bookId/review/:reviewId', reviewController1.deleteReview)
 
 
 
